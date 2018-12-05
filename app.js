@@ -6,6 +6,8 @@ const mongojs = require("mongojs");
 const ObjectId = mongojs.ObjectId;
 const app = express();
 const PORT = process.env.PORT || 3000;
+const url = process.env.MONGO_URI;
+var db = mongojs(url, ['mycollection'])
 //connecting to the database
 const db = mongojs('simpletodo',['todos']);
 
