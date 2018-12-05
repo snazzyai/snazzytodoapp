@@ -1,0 +1,26 @@
+<% include partials/header.ejs %>
+    <main class="container">
+        <section class="jumbotron">
+            <h1>Simple Todo App</h1>
+        </section>
+        <section id="form">
+            <div class="form-group">
+                <form method="POST" action="/todos/add">
+                        <textarea class="form-control" rows="5" id="todo-content" placeholder="Your Todo..." name="todocontent"></textarea>
+                        <input type="submit" class="btn btn-primary btn-lg" id= "button" value="submit">
+                </form>
+            </div>
+        </section>
+        <section id="todo-list">
+            <h2>My Todos List</h2>
+            <ul>
+                <% todos.forEach(function(todo){ %>
+                    <li><%= todo.content %><a href="#" data-id="<%= todo._id %>" class="delete-todo"><button class="btn btn-danger btn-md button">Delete</button></a></li>
+               <% }) %>
+            </ul>
+            
+        </section>
+    </main>
+<% include partials/footer.ejs %>
+
+ 
