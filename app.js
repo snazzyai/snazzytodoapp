@@ -5,7 +5,7 @@ const path = require('path');
 const mongojs = require("mongojs");
 const ObjectId = mongojs.ObjectId;
 const app = express();
-
+const PORT = process.env.PORT || 3000;
 //connecting to the database
 const db = mongojs('simpletodo',['todos']);
 
@@ -55,6 +55,6 @@ app.delete('/todos/delete/:id', (req, res)=>{
 })
 
 //port listening
-app.listen(3000, ()=>{
-    console.log("connected to port 3000");
+app.listen(PORT, ()=>{
+    console.log("connected to server");
 })
