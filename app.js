@@ -6,10 +6,10 @@ const mongojs = require("mongojs");
 const ObjectId = mongojs.ObjectId;
 const app = express();
 const PORT = process.env.PORT || 3000;
-const url = process.env.MONGO_URI;
-var db = mongojs(url, ['mycollection'])
+// const url = process.env.MONGO_URI;
+const normalUrl = "abdulsalamei:abdulsalamei93@ds149672.mlab.com:49672/simpletodo"
 //connecting to the database
-const db = mongojs('simpletodo',['todos']);
+const db = mongojs(normalUrl,['todos']);
 
 
 //middlewares
